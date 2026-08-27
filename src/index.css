@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Saira Condensed", "Arial Narrow", sans-serif;
+  --font-body: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+
+  --color-canvas: #000000;
+  --color-surface: #0d0d0d;
+  --color-surface-soft: #141414;
+  --color-surface-elevated: #1a1a1a;
+  --color-hairline: #262626;
+  --color-hairline-strong: #3a3a3a;
+
+  --color-ink: #ffffff;
+  --color-ink-muted: #b8b8b8;
+  --color-ink-faint: #7a7a7a;
+
+  --color-signal-300: #ffb46b;
+  --color-signal-500: #f5871f;
+  --color-signal-700: #b35e10;
+
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  section[id] {
+    scroll-margin-top: 72px;
+  }
+
+  ::selection {
+    background-color: var(--color-signal-700);
+    color: white;
+  }
+
+  * {
+    scrollbar-color: var(--color-signal-700) var(--color-surface);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-signal-500);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-6 sm:px-10 lg:px-14;
+  }
+
+  .eyebrow {
+    @apply font-mono text-[11px] tracking-[0.2em] text-ink-faint uppercase;
+  }
+
+  .display-heading {
+    @apply font-display font-semibold tracking-wide text-ink uppercase;
+  }
+
+  .ghost-button {
+    @apply inline-flex items-center gap-2 rounded-full border border-ink px-6 py-3 font-mono text-xs uppercase tracking-[0.15em] text-ink transition-colors duration-200 hover:border-signal-500 hover:text-signal-300;
+  }
+
+  .hairline-top {
+    @apply border-t-2 border-hairline-strong;
+  }
+}
