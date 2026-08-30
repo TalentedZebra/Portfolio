@@ -10,7 +10,7 @@ export default function About() {
 
         <div className="mt-10 flex items-center gap-4">
           <img
-            src="/images/tamu-etid-logo.png"
+            src={`${import.meta.env.BASE_URL}images/tamu-etid-logo.png`}
             alt="Texas A&M Engineering Technology & Industrial Distribution logo"
             className="h-10 w-10 shrink-0 object-cover"
           />

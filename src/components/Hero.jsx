@@ -10,7 +10,7 @@ export default function Hero() {
       className="relative flex min-h-[92vh] items-end overflow-hidden"
     >
       <img
-        src="/images/f22-raptor-climb.jpg"
+        src={`${import.meta.env.BASE_URL}images/f22-raptor-climb.jpg`}
         alt="F-22 Raptor fighter jet climbing steeply with afterburners lit"
         width={2400}
         height={904}

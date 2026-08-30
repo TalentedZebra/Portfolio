@@ -3,7 +3,7 @@ export const profile = {
   tagline: 'Mechatronics-track engineering student, drawn to anything that flies.',
   location: 'Houston, TX',
   email: 'joaquinkristof007@gmail.com',
-  resumeUrl: '/resume.pdf',
+  resumeUrl: `${import.meta.env.BASE_URL}resume.pdf`,
 }
 
 export const intro = {
@@ -19,11 +19,24 @@ export const education = {
 
 export const journalEntries = [
   {
+    id: 'tricopter-vtol',
+    title: 'Tricopter VTOL Design',
+    org: 'Personal project',
+    period: 'Aug 2026 – Present',
+    status: 'Research & Planning',
+    image: `${import.meta.env.BASE_URL}images/stallion-vtol-reference.webp`,
+    imageAlt: 'A reference tricopter VTOL aircraft design used as inspiration for early concept work, not a photo of a finished build',
+    body: [
+      "This one's still early. I'm researching and planning a tricopter VTOL (vertical takeoff and landing) aircraft, using a reference design like the one above as a starting point for my own version.",
+      "Right now that means working through configuration decisions in Fusion: motor placement, frame layout, and how I want the transition from vertical lift to forward flight to work, before any of it moves toward a prototype.",
+    ],
+  },
+  {
     id: 'target-apogee',
     title: 'Target-Apogee Rocket Design',
     org: 'Personal project',
     period: 'Apr 2026 – Present',
-    image: '/images/falcon9-night-launch.webp',
+    image: `${import.meta.env.BASE_URL}images/falcon9-night-launch.webp`,
     body: [
       "Right now I'm working through a rocket design constrained on every axis that matters: a hard 7.5-inch length limit, a C5 motor, and a target apogee of exactly 300 meters.",
       "I modeled the airframe in Onshape and ran the flight profile through OpenRocket, adjusting fin geometry and mass distribution between iterations until the simulated apogee landed where I wanted it. The current geometry hits 300 meters within the length constraint, which sounds simple until you've spent evenings tuning a fin change that seemed unrelated to apogee and watching the simulation prove otherwise.",

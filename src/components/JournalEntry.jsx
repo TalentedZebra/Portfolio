@@ -9,6 +9,11 @@ export default function JournalEntry({ entry }) {
           <p className="mt-1 font-mono text-xs uppercase tracking-[0.1em] text-ink-faint">
             {entry.period}
           </p>
+          {entry.status && (
+            <p className="mt-3 inline-block border border-hairline-strong px-2 py-1 font-mono text-[10px] uppercase tracking-[0.15em] text-signal-300">
+              {entry.status}
+            </p>
+          )}
           <h3 className="display-heading mt-4 text-3xl sm:text-4xl">{entry.title}</h3>
         </div>
 
@@ -16,7 +21,7 @@ export default function JournalEntry({ entry }) {
           {entry.image && (
             <img
               src={entry.image}
-              alt={`Photograph related to ${entry.title}`}
+              alt={entry.imageAlt || `Photograph related to ${entry.title}`}
               className="mb-6 aspect-video w-full object-cover"
               loading="lazy"
             />

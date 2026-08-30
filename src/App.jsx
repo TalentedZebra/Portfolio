@@ -15,7 +15,7 @@ function App() {
         <About />
         <Journal />
         <PhotoBand
-          src="/images/launch-banner.jpg"
+          src={`${import.meta.env.BASE_URL}images/launch-banner.jpg`}
           alt="Rocket lifting off from a coastal launch pad"
           caption="Liftoff"
         />
