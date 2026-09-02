@@ -3,6 +3,7 @@ import { navLinks, profile } from '../data/content.js'
 import { useActiveSection } from '../hooks/useActiveSection.js'
 
 const SECTION_IDS = navLinks.map((link) => link.id)
+const NAV_HEIGHT = 64
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -10,10 +11,23 @@ export default function Navbar() {
   const activeId = useActiveSection(SECTION_IDS)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12)
+    const heroEl = document.getElementById('hero')
+
+    const onScroll = () => {
+      // Stay transparent for the whole Hero section so the bottom-anchored
+      // name/tagline can scroll fully past the top edge before the nav
+      // solidifies — otherwise the opaque/blurred bar clips it mid-scroll.
+      const threshold = heroEl ? heroEl.offsetHeight - NAV_HEIGHT : 12
+      setScrolled(window.scrollY > threshold)
+    }
+
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
+    window.addEventListener('resize', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+    }
   }, [])
 
   const handleNavClick = (event, id) => {

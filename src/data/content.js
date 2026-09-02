@@ -25,6 +25,7 @@ export const journalEntries = [
     period: 'Aug 2026 – Present',
     status: 'Research & Planning',
     image: `${import.meta.env.BASE_URL}images/stallion-vtol-reference.webp`,
+    imageFramed: true,
     imageAlt: 'A reference tricopter VTOL aircraft design used as inspiration for early concept work, not a photo of a finished build',
     body: [
       "This one's still early. I'm researching and planning a tricopter VTOL (vertical takeoff and landing) aircraft, using a reference design like the one above as a starting point for my own version.",
@@ -37,6 +38,7 @@ export const journalEntries = [
     org: 'Personal project',
     period: 'Apr 2026 – Present',
     image: `${import.meta.env.BASE_URL}images/falcon9-night-launch.webp`,
+    imageAlt: "A Falcon 9 night launch, used here as mood photography, not a photo of this project's own rocket",
     body: [
       "Right now I'm working through a rocket design constrained on every axis that matters: a hard 7.5-inch length limit, a C5 motor, and a target apogee of exactly 300 meters.",
       "I modeled the airframe in Onshape and ran the flight profile through OpenRocket, adjusting fin geometry and mass distribution between iterations until the simulated apogee landed where I wanted it. The current geometry hits 300 meters within the length constraint, which sounds simple until you've spent evenings tuning a fin change that seemed unrelated to apogee and watching the simulation prove otherwise.",
@@ -50,11 +52,11 @@ export const journalEntries = [
   {
     id: 'ignitors-rocketry',
     title: 'Ignitors Rocketry Mentorship',
-    org: 'Texas A&M University',
+    org: 'Student Organization, Texas A&M University',
     period: 'Feb 2026 – Present',
     body: [
       "Ignitors Rocketry Mentorship is where I actually started building rockets instead of just thinking about them. The program runs through aerodynamics and structures in weekly sessions, and by the time you reach the propulsion unit you're expected to run your own apogee and flight calculations in OpenRocket, not just read about how someone else did it.",
-      "I've built three rockets through the program so far, start to finish.",
+      "I've built three rockets through the program so far. The first two had the same recovery problem: the ejection charge snapped the string connecting the parachute to the airframe. The first one was also unstable from not having enough mass up front, which I fixed on the second by packing clay into the nosecone.",
     ],
   },
   {
@@ -70,11 +72,22 @@ export const journalEntries = [
   {
     id: 'aggie-robotics',
     title: 'Aggie Robotics',
-    org: 'Texas A&M University',
+    org: 'Student Organization, Texas A&M University',
     period: 'Jan 2026 – Present',
     body: [
       "Combat robotics is a different kind of engineering discipline: everything has to survive being hit, on a strict weight limit. With Aggie Robotics I've worked the mechanical side of our 1-pound combat robots, prototyping weapon and drivetrain systems that have to hold up under an impact, not just look good in a CAD render.",
+      "I'm also part of the team building our 12-pound robot, a new weight class for Aggie Robotics. It'll be the first one the team has built at that size, so a lot of the weapon and drivetrain decisions don't have an established answer yet to build off of.",
       "I've also ended up running strategy discussions before competitions, which turned out to be its own kind of design problem.",
+    ],
+  },
+  {
+    id: 'threat-analysis-group',
+    title: 'Crime Analysis Assistant Intern',
+    org: 'Threat Analysis Group',
+    period: 'May 2023 – Aug 2023',
+    body: [
+      "The summer after FIRST Robotics wrapped, I interned as a Crime Analysis Assistant at Threat Analysis Group in Houston. Most of it was going through more than 100 local police incident reports and turning them into crime trend dashboards in Excel, along with security metric reports the consulting team used to track their own efficiency.",
+      "It wasn't glamorous, but it's where I actually learned what structured data work looks like: I streamlined how reports got categorized and cut down prep time doing it, and it stuck with me that a lot of good engineering work is just being disciplined about organizing information before you get to the interesting part.",
     ],
   },
   {

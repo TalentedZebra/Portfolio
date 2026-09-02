@@ -19,12 +19,23 @@ export default function JournalEntry({ entry }) {
 
         <div>
           {entry.image && (
-            <img
-              src={entry.image}
-              alt={entry.imageAlt || `Photograph related to ${entry.title}`}
-              className="mb-6 aspect-video w-full object-cover"
-              loading="lazy"
-            />
+            entry.imageFramed ? (
+              <div className="mb-6 aspect-video w-full border border-hairline-strong bg-surface p-6 sm:p-10">
+                <img
+                  src={entry.image}
+                  alt={entry.imageAlt || `Photograph related to ${entry.title}`}
+                  className="h-full w-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+            ) : (
+              <img
+                src={entry.image}
+                alt={entry.imageAlt || `Photograph related to ${entry.title}`}
+                className="mb-6 aspect-video w-full object-cover"
+                loading="lazy"
+              />
+            )
           )}
 
           {entry.body.map((paragraph, i) => (

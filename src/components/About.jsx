@@ -4,7 +4,9 @@ export default function About() {
   return (
     <section id="about" aria-label="About" className="hairline-top py-24 sm:py-32">
       <div className="container-page">
-        <p className="max-w-2xl font-body text-xl leading-relaxed text-ink sm:text-2xl">
+        <h2 className="display-heading text-3xl sm:text-4xl">About</h2>
+
+        <p className="mt-6 max-w-2xl font-body text-xl leading-relaxed text-ink sm:text-2xl">
           {intro.blurb}
         </p>
 
